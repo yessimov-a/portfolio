@@ -1,14 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./src/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
 
+</head>
+
+<body>
+    <iframe id="repair" class="iframe hide" src="src/projects/repair-design-project/index.html"
+        frameborder="0"></iframe>
+    <iframe id="theyalow" class="iframe hide" src="src/projects/theyalow/index.html" frameborder="0"></iframe>
+    <button class="size-button back hide">BACK</button>
+    <button class="size-button to-desktop hide">DESKTOP</button>
+    <button class="size-button to-mobile hide">MOBILE</button>
+    <main class="container show">
+        <div class="title">
+            <div class="logo">
+                <img src="./src/images/logo.png" alt="logo">
+            </div>
+            <div class="info">
+                <h1>Yessimov Azamat</h1>
+                <a href="https://github.com/yessimov-a" target="_blank">Github</a>
+            </div>
+        </div>
+        <div class="education">
+            <div class="education-button-field">
+                <h2>Education</h2>
+                <button class="click">&lt;</button>
+            </div>
+            <ul class="ul">
+                <li>
+                    School<br>
+                    2005-2016
+                </li>
+                <li>
+                    University<br>
+                    2016-2020
+                </li>
+                <li>
+                    RSSchool Courses<br>
+                    2019-2020
+                </li>
+            </ul>
+        </div>
+        <div class="projects">
+            <h2>Projects</h2>
+            <div class="slider">
+                <div class="slider__wrapper">
+                    <div class="slider__item">
+                        <div class="description">Theyalow Project</div>
+                        <div class="img-link">
+                            <div class="slider-button"></div>
+                            <img id="first" class="img" src="./src/images/theyalow.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="slider__item">
+                        <div class="description">Repair Design Project Project</div>
+                        <div class="img-link">
+                            <div class="slider-button"></div>
+                            <img id="second" class="img" src="./src/images/repair.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <a class="slider__control slider__control_left" href="#" role="button"></a>
+                <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+            </div>
+        </div>
+    </main>
     <script src="./src/js/index.js"></script>
 </body>
+
 </html>

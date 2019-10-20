@@ -1,0 +1,261 @@
+body {
+  padding: 15px;
+}
+
+h1 {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 25px;
+}
+.container {
+  max-width: 700px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+h2 {
+  font-family: monospace;
+  font-size: 30px;
+}
+.click {
+  outline: none;
+  margin-left: 20px;
+  border: none;
+  background: inherit;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  transform: rotate(-90deg);
+  transition: 0.5s linear;
+}
+.rotate {
+  transform: rotate(90deg);
+}
+
+.title {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid black;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-button-field {
+  padding: 20px;
+  background: #fff;
+  display: flex;
+}
+
+li {
+  padding-left: 20px;
+  color: black;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.logo img {
+  width: 170px;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.slider__wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slider__item {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.description {
+  width: 20%;
+  padding: 5px;
+}
+.img-link {
+  width: 80%;
+}
+.img {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  margin-top: -50px;
+}
+
+.slider__control {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  height: 50px;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, .5);
+}
+
+.slider__control:hover,
+.slider__control:focus {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  opacity: .9;
+}
+
+.slider__control_left {
+  left: 0;
+}
+
+.slider__control_right {
+  right: 0;
+}
+
+.slider__control::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.slider__control_left::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_right::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.slider__item > div {
+  text-align: center;
+}
+
+ul {
+  position: relative;
+  z-index: -1;
+  top: -150px;
+  transition: 0.5s linear;
+}
+.projects {
+  border-top: 1px solid black;
+  padding: 20px;
+  position: relative;
+  top: -140px;
+  transition: 0.5s linear;
+}
+
+.swipe {
+  top: 0px;
+}
+.iframe {
+  z-index: 4;
+  padding: 5px;
+  border: 1px solid black;
+  margin: auto;
+}
+.mobile {
+  width: 375px;
+  height: 500px;
+}
+.desktop {
+  width: 100%;
+  height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.back {
+  z-index: 5;
+  position: fixed;
+  top: 80%;
+  left: 80%;
+}
+.to-mobile {
+  z-index: 5;
+  position: fixed;
+  top: 70%;
+  left: 80%;
+}
+.to-desktop {
+  z-index: 5;
+  position: fixed;
+  top: 70%;
+  left: 80%;
+}
+
+.desk-active {
+  z-index: 5;
+}
+
+@media (max-width: 414px) {
+  .slider__wrapper {
+    /* position: relative;
+    top: -68px; */
+    transition: 0.5s linear;
+  }
+  .slider__item {
+    flex-direction: column;
+    position: relative;
+    transition: 0.5s linear;
+    top: -35px;
+  }
+  .description {
+    border: 1px solid black;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0;
+    position: relative;
+    top: 110px;
+  }
+  .img-link {
+    width: 100%;
+    height: 100%;
+  }
+  .img {
+    width: 100%;
+  }
+  .slider-button {
+    z-index: 5;
+  }
+}
+
+.slider-button {
+  cursor: pointer;
+  top: 5%;
+  left: 75%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.size-button {
+  border: 2px solid black;
+  border-radius: 5px;
+  /* padding: 10px; */
+  width: 100px;
+  height: 40px;
+}

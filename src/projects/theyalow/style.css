@@ -1,0 +1,683 @@
+@font-face {
+  font-family: "Lucida Sans";
+  src: url(./assets/fonts/PTC55F.ttf);
+}
+@font-face {
+  font-family: "Segoe";
+  src: url(./assets/fonts/segoe-wp-light.ttf);
+}
+@font-face {
+  font-family: "Asap";
+  src: url(./assets/fonts/Asap-Regular.otf);
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url(./assets/fonts/Asap-Regular.otf);
+}
+@font-face {
+  font-family: "PTSans";
+  src: url(./assets/fonts/PTS55F.ttf);
+}
+body {
+  margin: 0;
+}
+h1,
+ul {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1020px;
+  margin: auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+}
+.logo h1 {
+  font-family: "Lucida Sans", sans-serif;
+  font-style: italic;
+  color: #fff;
+  font-size: 42px;
+  margin-top: 9px;
+  margin-left: 3px;
+  font-weight: 100;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 112px;
+}
+
+.list {
+  display: flex;
+  box-shadow: -4px -5px 0px 0px #f5c5065e, -8px -8px 0px 0px #f5c50644;
+}
+.list-item:nth-child(1) {
+  width: 172px;
+  border-right: 1px solid #33322d44;
+  padding-right: 21px;
+}
+.list-item:nth-child(1) p {
+  margin-left: 10px;
+  margin-top: -1px;
+}
+
+.list-item:nth-child(2) {
+  width: 134px;
+  border-right: 1px solid #33322d44;
+  padding-right: 18px;
+}
+.list-item:nth-child(2) p {
+  margin-left: 9px;
+  margin-top: -1px;
+}
+.list-item:nth-child(3) {
+  width: 147px;
+  padding-right: 21px;
+}
+.list-item:nth-child(3) p {
+  margin-left: 11px;
+  margin-top: -1px;
+}
+.list-item:nth-child(3) img {
+  margin-top: -1px;
+}
+.list-item {
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  background: #f5c506;
+  height: 41px;
+  list-style: none;
+}
+.list-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-size: 17px;
+  color: #a78708;
+  font-weight: 600;
+}
+.welcome-section-wrapper {
+  background: url(./assets/img/header-bg.png) no-repeat;
+  background-size: cover;
+  padding-top: 164px;
+  padding-bottom: 67px;
+  margin-top: -112px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.welcome-section {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+.welcome-section video {
+  margin-left: 5px;
+  max-width: 557px;
+}
+.welcome-section h1 {
+  text-align: center;
+  font-family: "Asap";
+  font-size: 62px;
+  text-transform: uppercase;
+  margin-bottom: 29px;
+  margin-left: 41px;
+  letter-spacing: 1px;
+  color: #fff;
+  font-weight: 100;
+}
+
+.welcome-span {
+  color: #f5c506;
+}
+
+.welcome-section-wrapper button {
+  width: 32px;
+  height: 57px;
+  border: none;
+  background: #c5a00c;
+  margin-bottom: 7px;
+  padding-right: 9px;
+}
+.icon-section {
+  display: flex;
+  height: 212px;
+}
+.icon-section-wrapper {
+  background: url(./assets/img/icons-bg.png) center;
+  width: 100%;
+  box-shadow: 0 5px 20px 1px black;
+}
+.icon-section figure {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+.icon-section figure:first-child {
+  border-left: 1px solid #0000004a;
+  border-right: 1px solid #0000004a;
+}
+.icon-section figure:last-child {
+  border-left: 1px solid #0000004a;
+  border-right: 1px solid #0000004a;
+}
+figcaption {
+  margin-bottom: 32px;
+  font-family: "Segoe", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 27px;
+  text-transform: uppercase;
+  margin-left: 19px;
+  margin-top: 9px;
+}
+.scroll-section-wrapper {
+  background: url(./assets/img/scroll-bg.png) repeat;
+  width: 100%;
+  background-size: cover;
+  padding-top: 30px;
+}
+h3,
+p {
+  margin: 0;
+}
+h2 {
+  margin: 0;
+  font-size: 37px;
+  font-family: "PTSans";
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  font-weight: 200;
+}
+.scroll {
+  display: flex;
+}
+
+.text {
+  width: 311px;
+  height: 216px;
+  background: #f09f07;
+  padding-top: 16px;
+  padding-left: 30px;
+  font-size: 29px;
+  font-family: "Segoe";
+  color: rgb(255, 255, 255);
+  line-height: 1.308;
+  text-align: left;
+}
+.share {
+  width: 331px;
+  background: #f09f07;
+  height: 232px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tooltip {
+  position: relative;
+  width: 112px;
+  height: 86px;
+  top: 31px;
+  left: -30px;
+  background: #ddb101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tooltip h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 51px;
+  line-height: 81%;
+  margin-top: 11px;
+  margin-left: 5px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.tooltip p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 21px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  margin-bottom: 0px;
+  color: #bd7b20;
+}
+/* .scroll-section {
+    padding-bottom: 10px;
+} */
+.scroll-item button {
+  position: relative;
+  border: none;
+  background: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.text button {
+  top: -95px;
+  left: 278px;
+}
+.number {
+  position: relative;
+  font-family: "Segoe";
+  font-size: 25px;
+  color: #fff;
+  top: 11px;
+  left: 133px;
+}
+.share button {
+  top: -4px;
+  left: 149px;
+}
+.share img {
+  margin-top: 10px;
+}
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 90%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+  margin-left: 5%;
+  margin-top: 126px;
+  margin-bottom: 22px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 90%;
+  cursor: pointer;
+  margin-left: 5%;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 197px;
+  border-radius: 7.5px;
+  border: none;
+  background: #ec9e03;
+  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 15px;
+  width: 197px;
+  border-radius: 7.5px;
+  border: none;
+  background: #ec9e03;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb {
+  height: 15px;
+  width: 197px;
+  border-radius: 7.5px;
+  border: none;
+  background: #ec9e03;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 15xpx;
+  cursor: pointer;
+  background: #fbe798;
+  border-radius: 7.5px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #fbe798;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background: #fbe798;
+  border-radius: 7.5px;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background: #fbe798;
+  border-radius: 7.5px;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #fbe798;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #fbe798;
+  border-radius: 7.5px;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #fbe798;
+}
+
+.section-2-wrapper {
+  background: url(./assets/img/section-2-bg.png) no-repeat;
+  width: 100%;
+  background-size: cover;
+}
+
+.section-2 {
+  padding-top: 35px;
+  padding-bottom: 60px;
+}
+.section-2 h2 {
+  text-align: center;
+  color: #f5c506;
+  font-size: 42px;
+  margin-bottom: 3px;
+}
+
+.section-2 ul {
+  margin-left: 77px;
+  margin-top: 87px;
+}
+
+.section-2 li {
+  font-family: "OpenSans";
+  font-size: 22px;
+  color: #a3a3a1;
+  list-style: none;
+  margin-bottom: 22px;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f5c506;
+  display: inline-block;
+  margin-right: 21px;
+}
+
+.section-2-block {
+  display: flex;
+}
+
+.footer-wrapper {
+  background: #4c4c4c;
+  box-shadow: 0px -1px 4px 1px black;
+}
+.footer {
+  padding: 7px 0;
+  display: flex;
+  align-items: center;
+}
+.footer img {
+  height: 54px;
+  width: 54px;
+  margin-right: 9px;
+}
+
+.footer h1 {
+  color: #fff;
+  font-family: "Lucida Sans";
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.share-form {
+  display: none;
+}
+@media (max-width: 987px) {
+  input[type="range"] {
+    display: none;
+  }
+  .scroll-section-wrapper {
+    padding: 0;
+  }
+  .scroll-section h2 {
+    display: none;
+  }
+  .tooltip {
+    display: none;
+  }
+  .scroll {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .scroll-item {
+  }
+  */ .text {
+    width: 280px;
+    margin-right: 5px;
+  }
+  video {
+    width: 310px;
+    margin-left: right;
+  }
+  .share {
+    width: 630px;
+    margin: auto;
+  }
+  .section-2-block {
+    justify-content: space-evenly;
+  }
+  .section-2 img {
+    width: 250px;
+  }
+  .welcome-section-wrapper button {
+    display: none;
+  }
+  .welcome-section-wrapper h1 {
+    display: none;
+  }
+  .welcome-section {
+    justify-content: center;
+  }
+  .welcome-section-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+  .welcome-section video {
+    width: 100%;
+    margin: 0;
+  }
+  .header {
+    height: 62px;
+    background: #5c5c5c;
+  }
+  .logo {
+    display: flex;
+    height: 100%;
+    margin-top: 20px;
+  }
+  .logo img {
+    width: 38px;
+    height: 38px;
+    margin: 0;
+    margin-left: 13px;
+    margin-top: 2px;
+    margin-right: 7px;
+  }
+  .logo h1 {
+    margin: 0;
+    font-size: 19px;
+    margin-top: 5px;
+  }
+  .list {
+    box-shadow: none;
+  }
+  .list-item {
+    height: 62px;
+  }
+}
+
+@media (max-width: 760px) {
+  .welcome-section video {
+    min-width: 640px;
+    max-height: 326px;
+  }
+  .icon-section-wrapper {
+    box-shadow: none;
+  }
+  .icon-section {
+    height: 170px;
+    display: flex;
+  }
+  .icon-section figure {
+    margin-bottom: 25px;
+    border: none !important;
+  }
+  .icon-section figcaption {
+    font-size: 23px;
+    margin: 0;
+  }
+  .scroll-section-wrapper {
+    background: none;
+  }
+  .scroll {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .text {
+    margin: 11px 2px;
+    width: 270px;
+    height: 216px;
+    font-size: 28px;
+  }
+  .text button {
+    left: 230px;
+    top: -15px;
+  }
+  .video {
+    margin: 11px 18px 9px 4px;
+    width: 300px;
+    height: 232px;
+  }
+  .share {
+    width: 640px;
+    display: flex;
+    flex-direction: row;
+    padding: 60px 30px;
+    text-align: center;
+    background: #f5c507;
+  }
+  .share img {
+    margin-left: 10%;
+  }
+  .share button {
+    display: none;
+  }
+  .number {
+    display: none;
+  }
+  .share-form {
+    display: block;
+    width: 50%;
+  }
+  .share-form p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #afaeae;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 14px;
+  }
+  form {
+    display: flex;
+    width: 100%;
+  }
+  .share-form input[type="submit"] {
+    border: none;
+    height: 30px;
+    border-radius: 0px 10px 10px 0px;
+    width: 30%;
+    background: #dd9c1a;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+  .share-form input[type="text"] {
+    width: 70%;
+    border: none;
+    margin: 0;
+    height: 28px;
+    border-radius: 10px 0px 0px 10px;
+  }
+  .section-2-block {
+    padding: 0 50px;
+  }
+  .section-2-block ul {
+    display: none;
+  }
+  .section-2-block img {
+    width: 100%;
+  }
+  .footer {
+    padding-left: 10%;
+  }
+}
+.share {
+    height: 100%;
+}
+
+@media (max-width: 635px) {
+    .share-form {
+        width: 100%;
+    }
+    .share img {
+        display: none;
+    }
+    video {
+        min-width: 100% !important;
+    }
+    .header {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        width: 100%;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .list-item {
+        justify-content: flex-start;
+        width: 100% !important;
+    }
+}

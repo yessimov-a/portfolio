@@ -1,3 +1,4 @@
+'use strict';
 var multiItemSlider = (function () {
 
     function _isElementVisible(element) {
@@ -110,6 +111,7 @@ var multiItemSlider = (function () {
 
         var _transformItem = function (direction) {
             var nextItem, currentIndicator = _indexIndicator;
+
             if (direction === 'right') {
                 _positionLeftItem++;
                 if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
@@ -382,112 +384,43 @@ var multiItemSlider = (function () {
     }
 }());
 
+// var slider = multiItemSlider('.slider_projects', {
+//     isCycling: false,
+//     indicators: true,
+//     navbarIndicators: true
+// });
+
+// var slider2 = multiItemSlider('.slider_photos', {
+//     isCycling: false,
+//     indicators: false,
+//     navbarIndicators: false
+// });
+
+// var slide3 = multiItemSlider('.slider-steps', {
+//     isCycling: false,
+//     indicators: true,
+//     navbarIndicators: true
+// })
+
 document.addEventListener('DOMContentLoaded', function () {
-    multiItemSlider('.slider', {
+    multiItemSlider('.slider_projects', {
+        isCycling: false,
+        indicators: true,
+        navbarIndicators: true
+    });
+    multiItemSlider('.slider_photos', {
         isCycling: false,
         indicators: false,
         navbarIndicators: false
     });
-})
-
-// var slider = multiItemSlider('.slider');
-var down = true;
-var desk = true;
-
-document.querySelectorAll('.slider-button').forEach((item) => {
-    item.addEventListener('click', function () {
-        if (desk) {
-            document.querySelectorAll('.description').forEach((item) => {
-                item.classList.add('desk-active')
-            })
-            desk = !desk;
-        } else {
-            document.querySelectorAll('.description').forEach((item) => {
-                item.classList.remove('desk-active')
-            })
-            desk = !desk;
-        }
+    multiItemSlider('.slider-steps', {
+        isCycling: false,
+        indicators: true,
+        navbarIndicators: true
+    });
+    multiItemSlider('.slider-gallery', {
+        isCycling: false,
+        indicators: false,
+        navbarIndicators: false
     })
 })
-
-document.querySelector('.click').addEventListener('click', function () {
-    if (down) {
-        document.querySelector('.click').classList.add('rotate')
-        document.querySelector('.ul').classList.add('swipe')
-        document.querySelector('.projects').classList.add('swipe')
-        down = !down;
-    } else {
-        document.querySelector('.click').classList.remove('rotate')
-        document.querySelector('.ul').classList.remove('swipe')
-        document.querySelector('.projects').classList.remove('swipe')
-        down = !down;
-    }
-})
-
-
-function hideButtons() {
-    document.querySelector('.to-desktop').classList.remove('show')
-    document.querySelector('.back').classList.remove('show')
-    document.querySelector('.to-mobile').classList.remove('show')
-    document.querySelector('.to-desktop').classList.add('hide')
-    document.querySelector('.back').classList.add('hide')
-    document.querySelector('.to-mobile').classList.add('hide')
-}
-
-
-function toProject(frame) {
-    if (document.querySelector('.container').offsetWidth > 414) {
-        frame.classList.add('desktop');
-        document.querySelector('.to-mobile').classList.remove('hide')
-        document.querySelector('.to-mobile').classList.add('show')
-    } else {
-        frame.classList.add('mobile');
-    }
-    frame.classList.remove('hide');
-    document.querySelector('.container').classList.remove('show')
-    frame.classList.add('show');
-    document.querySelector('.container').classList.add('hide')
-    document.querySelector('.back').classList.remove('hide');
-    document.querySelector('.back').classList.add('show');
-}
-
-var frame;
-document.getElementById('first').addEventListener('click', function () {
-    frame = document.getElementById('theyalow');
-    toProject(frame);
-})
-document.getElementById('second').addEventListener('click', function () {
-    frame = document.getElementById('repair');
-    toProject(frame);
-
-})
-
-document.querySelector('.back').addEventListener('click', function () {
-    frame.classList.remove('show');
-    document.querySelector('.container').classList.remove('hide')
-    frame.classList.add('hide');
-    document.querySelector('.container').classList.add('show');
-    frame.classList.remove('desktop');
-    frame.classList.remove('mobile');
-    hideButtons();
-    frame = null;
-})
-
-document.querySelector('.to-mobile').addEventListener('click', function () {
-    document.querySelector('.to-mobile').classList.remove('show')
-    document.querySelector('.to-mobile').classList.add('hide')
-    document.querySelector('.to-desktop').classList.remove('hide')
-    document.querySelector('.to-desktop').classList.add('show')
-    frame.classList.remove('desktop');
-    frame.classList.add('mobile');
-})
-
-document.querySelector('.to-desktop').addEventListener('click', function () {
-    document.querySelector('.to-desktop').classList.remove('show')
-    document.querySelector('.to-desktop').classList.add('hide')
-    document.querySelector('.to-mobile').classList.remove('hide')
-    document.querySelector('.to-mobile').classList.add('show')
-    frame.classList.remove('mobile');
-    frame.classList.add('desktop');
-})
-

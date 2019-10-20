@@ -1,0 +1,21 @@
+import '../scss/style.scss';
+import '../scss/header.scss';
+import '../scss/form.scss';
+import '../scss/cards.scss';
+import '../scss/sliders.scss';
+import '../scss/button.scss';
+import '../scss/gallery.scss';
+import '../scss/text-block.scss';
+import '../scss/home-block.scss';
+import '../scss/scroll-block.scss';
+import '../scss/online-control-block.scss';
+import '../scss/title.scss';
+import '../scss/type-of-repair.scss';
+import '../scss/circle-block.scss';
+import '../scss/steps.scss';
+import '../scss/design-projects-block.scss';
+import '../scss/team-block.scss';
+import '../scss/our-clients-block.scss';
+import '../scss/map-block.scss';
+
+import './slider.js'
