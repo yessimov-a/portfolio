@@ -1,7 +1,7 @@
-var multiItemSlider = (function () {
+let multiItemSlider = (function () {
 
     function _isElementVisible(element) {
-        var rect = element.getBoundingClientRect(),
+        let rect = element.getBoundingClientRect(),
             vWidth = window.innerWidth || doc.documentElement.clientWidth,
             vHeight = window.innerHeight || doc.documentElement.clientHeight,
             elemFromPoint = function (x, y) { return document.elementFromPoint(x, y) };
@@ -17,7 +17,7 @@ var multiItemSlider = (function () {
     }
 
     return function (selector, config) {
-        var
+        let
             _mainElement = document.querySelector(selector),
 
             _sliderWrapper = _mainElement.querySelector(selector + '__wrapper'),
@@ -50,7 +50,7 @@ var multiItemSlider = (function () {
                 pause: true
             };
 
-        for (var key in config) {
+        for (let key in config) {
             if (key in _config) {
                 _config[key] = config[key];
             }
@@ -60,9 +60,9 @@ var multiItemSlider = (function () {
             _items.push({ item: item, position: index, transform: 0 });
         });
 
-        var _setActive = function () {
-            var _index = 0;
-            var width = parseFloat(document.body.clientWidth);
+        let _setActive = function () {
+            let _index = 0;
+            let width = parseFloat(document.body.clientWidth);
             _states.forEach(function (item, index, arr) {
                 _states[index].active = false;
                 if (width >= _states[index].minWidth)
@@ -71,8 +71,8 @@ var multiItemSlider = (function () {
             _states[_index].active = true;
         }
 
-        var _getActive = function () {
-            var _index;
+        let _getActive = function () {
+            let _index;
             _states.forEach(function (item, index, arr) {
                 if (_states[index].active) {
                     _index = index;
@@ -81,9 +81,9 @@ var multiItemSlider = (function () {
             return _index;
         }
 
-        var position = {
+        let position = {
             getItemMin: function () {
-                var indexItem = 0;
+                let indexItem = 0;
                 _items.forEach(function (item, index) {
                     if (item.position < _items[indexItem].position) {
                         indexItem = index;
@@ -92,7 +92,7 @@ var multiItemSlider = (function () {
                 return indexItem;
             },
             getItemMax: function () {
-                var indexItem = 0;
+                let indexItem = 0;
                 _items.forEach(function (item, index) {
                     if (item.position > _items[indexItem].position) {
                         indexItem = index;
@@ -108,8 +108,8 @@ var multiItemSlider = (function () {
             }
         }
 
-        var _transformItem = function (direction) {
-            var nextItem, currentIndicator = _indexIndicator;
+        let _transformItem = function (direction) {
+            let nextItem, currentIndicator = _indexIndicator;
             if (direction === 'right') {
                 _positionLeftItem++;
                 if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
@@ -150,15 +150,15 @@ var multiItemSlider = (function () {
 
         }
 
-        var _slideTo = function (to) {
-            var i = 0, direction = (to > _indexIndicator) ? 'right' : 'left';
+        let _slideTo = function (to) {
+            let i = 0, direction = (to > _indexIndicator) ? 'right' : 'left';
             while (to !== _indexIndicator && i <= _maxIndexIndicator) {
                 _transformItem(direction);
                 i++;
             }
         }
 
-        var _cycle = function (direction) {
+        let _cycle = function (direction) {
             if (!_config.isCycling) {
                 return;
             }
@@ -167,10 +167,10 @@ var multiItemSlider = (function () {
             }, _config.interval);
         }
 
-        var _controlClick = function (e) {
+        let _controlClick = function (e) {
             e.preventDefault();
             if (e.target.classList.contains((selector + '__control').slice(1))) {
-                var direction = e.target.classList.contains((selector + '__control_right').slice(1)) ? 'right' : 'left';
+                let direction = e.target.classList.contains((selector + '__control_right').slice(1)) ? 'right' : 'left';
                 _transformItem(direction);
                 clearInterval(_interval);
                 _cycle(_config.direction);
@@ -182,7 +182,7 @@ var multiItemSlider = (function () {
             }
         };
 
-        var _handleVisibilityChange = function () {
+        let _handleVisibilityChange = function () {
             if (document.visibilityState === "hidden") {
                 clearInterval(_interval);
             } else {
@@ -191,7 +191,7 @@ var multiItemSlider = (function () {
             }
         }
 
-        var _refresh = function () {
+        let _refresh = function () {
             clearInterval(_interval);
             _mainElement.innerHTML = _html;
             _sliderWrapper = _mainElement.querySelector(selector + '__wrapper');
@@ -216,7 +216,7 @@ var multiItemSlider = (function () {
 
         }
 
-        var _setUpListeners = function () {
+        let _setUpListeners = function () {
             _mainElement.addEventListener('click', _controlClick);
             if (_config.pause && _config.isCycling) {
                 _mainElement.addEventListener('mouseenter', function () {
@@ -230,7 +230,7 @@ var multiItemSlider = (function () {
 
             document.addEventListener('visibilitychange', _handleVisibilityChange, false);
             window.addEventListener('resize', function () {
-                var
+                let
                     _index = 0,
                     width = parseFloat(document.body.clientWidth);
                 _states.forEach(function (item, index, arr) {
@@ -245,17 +245,17 @@ var multiItemSlider = (function () {
 
             //touch and mouse handle
 
-            var startX = 0;
-            var startY = 0;
-            var distX = 0;
-            var distY = 0;
+            let startX = 0;
+            let startY = 0;
+            let distX = 0;
+            let distY = 0;
 
-            var startTime = 0;
-            var elapsedTime = 0;
+            let startTime = 0;
+            let elapsedTime = 0;
 
-            var threshold = 150;
-            var restraint = 100;
-            var allowedTime = 300;
+            let threshold = 150;
+            let restraint = 100;
+            let allowedTime = 300;
 
             _mainElement.addEventListener('mousedown', function (e) {
                 startX = e.pageX;
@@ -285,7 +285,7 @@ var multiItemSlider = (function () {
 
             _mainElement.addEventListener('touchstart', function (e) {
                 if (e.target.classList.contains((selector + '__control').slice(1))) {
-                    var direction = e.target.classList.contains((selector + '__control_right').slice(1)) ? 'right' : 'left';
+                    let direction = e.target.classList.contains((selector + '__control_right').slice(1)) ? 'right' : 'left';
                     _transformItem(direction);
                     clearInterval(_interval);
                     _cycle(_config.direction);
@@ -295,7 +295,7 @@ var multiItemSlider = (function () {
                     clearInterval(_interval);
                     _cycle(_config.direction);
                 }
-                var touchObj = e.changedTouches[0];
+                let touchObj = e.changedTouches[0];
                 startX = touchObj.pageX;
                 startY = touchObj.pageY;
                 startTime = new Date().getTime();
@@ -305,11 +305,21 @@ var multiItemSlider = (function () {
                 e.preventDefault();
             });
             _mainElement.addEventListener('touchend', function (e) {
-                var touchObj = e.changedTouches[0];
+                let touchObj = e.changedTouches[0];
                 distX = touchObj.pageX - startX;
                 distY = touchObj.pageY - startY;
-                elapsedTime = new Date().getTime() - startTime;
 
+                elapsedTime = new Date().getTime() - startTime;
+                if (distX === 0 && distY === 0) {
+                    if(e.target.id === 'first') {
+                        frame = document.getElementById('theyalow');
+                        toProject(frame);
+                    }
+                    if(e.target.id === 'second') {
+                        frame = document.getElementById('repair');
+                        toProject(frame);
+                    }
+                }
                 if (elapsedTime <= allowedTime) {
                     if (Math.abs(distX) >= threshold && Math.abs(distY) <= threshold) {
                         if (distX > 0) {
@@ -329,12 +339,12 @@ var multiItemSlider = (function () {
 
         }
 
-        var _addIndicators = function () {
-            var container = document.querySelector(selector + '_indicators')
-            var sliderIndicators = document.createElement('ol');
+        let _addIndicators = function () {
+            let container = document.querySelector(selector + '_indicators')
+            let sliderIndicators = document.createElement('ol');
             sliderIndicators.classList.add('slider__indicators');
-            for (var i = 0; i < _sliderItems.length; i++) {
-                var sliderIndicatorsItem = document.createElement('li');
+            for (let i = 0; i < _sliderItems.length; i++) {
+                let sliderIndicatorsItem = document.createElement('li');
                 if (i === 0) {
                     sliderIndicatorsItem.classList.add('active');
                 }
@@ -390,19 +400,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 })
 
-// var slider = multiItemSlider('.slider');
-var down = true;
-var desk = true;
+// let slider = multiItemSlider('.slider');
+let down = true;
+let desk = true;
 
+// document.querySelectorAll('.slider-button').forEach((item) => {
+//     item.addEventListener('click', function () {
+//         console.log('click')
+//         if (desk) {
+//             document.querySelectorAll('.description').forEach((item) => {
+//                 item.classList.add('desk-active')
+//             })
+//             desk = !desk;
+//         } else {
+//             document.querySelectorAll('.description').forEach((item) => {
+//                 item.classList.remove('desk-active')
+//             })
+//             desk = !desk;
+//         }
+//     })
+// })
 document.querySelectorAll('.slider-button').forEach((item) => {
-    item.addEventListener('click', function () {
+    item.addEventListener('touchstart', function (e) {
         if (desk) {
             document.querySelectorAll('.description').forEach((item) => {
+                e.target.innerHTML = "Hide"
                 item.classList.add('desk-active')
             })
             desk = !desk;
         } else {
             document.querySelectorAll('.description').forEach((item) => {
+                e.target.innerHTML = "Show"
                 item.classList.remove('desk-active')
             })
             desk = !desk;
@@ -410,7 +438,9 @@ document.querySelectorAll('.slider-button').forEach((item) => {
     })
 })
 
-document.querySelector('.click').addEventListener('click', function () {
+document.querySelector('.education-button-field').addEventListener('click', toggleEd)
+
+function toggleEd() {
     if (down) {
         document.querySelector('.click').classList.add('rotate')
         document.querySelector('.ul').classList.add('swipe')
@@ -422,7 +452,7 @@ document.querySelector('.click').addEventListener('click', function () {
         document.querySelector('.projects').classList.remove('swipe')
         down = !down;
     }
-})
+}
 
 
 function hideButtons() {
@@ -451,7 +481,7 @@ function toProject(frame) {
     document.querySelector('.back').classList.add('show');
 }
 
-var frame;
+let frame;
 document.getElementById('first').addEventListener('click', function () {
     frame = document.getElementById('theyalow');
     toProject(frame);
@@ -459,8 +489,8 @@ document.getElementById('first').addEventListener('click', function () {
 document.getElementById('second').addEventListener('click', function () {
     frame = document.getElementById('repair');
     toProject(frame);
-
 })
+
 
 document.querySelector('.back').addEventListener('click', function () {
     frame.classList.remove('show');
@@ -491,3 +521,4 @@ document.querySelector('.to-desktop').addEventListener('click', function () {
     frame.classList.add('desktop');
 })
 
+document.querySelector('.projects').addEventListener('click', (e) => e.target)

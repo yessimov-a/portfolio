@@ -50,7 +50,7 @@ h2 {
   display: flex;
 }
 
-li {
+.ul > li {
   padding-left: 20px;
   color: black;
   font-family: monospace;
@@ -65,10 +65,10 @@ li {
   position: relative;
   overflow: hidden;
   margin: auto;
-  margin-top: 20px;
 }
 
 .slider__wrapper {
+  margin-top: -45px;
   display: flex;
   transition: transform 0.6s ease;
 }
@@ -85,6 +85,9 @@ li {
 }
 .img-link {
   width: 80%;
+}
+.img-link > img {
+  cursor: pointer;
 }
 .img {
   position: relative;
@@ -145,13 +148,18 @@ li {
 
 .slider__item > div {
   text-align: center;
+  margin-top: 100px;
 }
 
-ul {
+.ul {
   position: relative;
   z-index: -1;
   top: -150px;
   transition: 0.5s linear;
+}
+.description >ul {
+  margin-top: 20px;
+  text-align: left;
 }
 .projects {
   border-top: 1px solid black;
@@ -210,6 +218,18 @@ ul {
 }
 
 @media (max-width: 414px) {
+  body {
+    padding: 0;
+  }
+  .projects {
+    padding: 0;
+  }
+  .projects > h2 {
+    padding: 20px;
+  }
+  .slider__control {
+    display: none
+  }
   .slider__wrapper {
     /* position: relative;
     top: -68px; */
@@ -219,15 +239,15 @@ ul {
     flex-direction: column;
     position: relative;
     transition: 0.5s linear;
-    top: -35px;
+    top: -20px;
   }
   .description {
+    background: #fdfbfb9e;
     border: 1px solid black;
     width: 100%;
-    box-sizing: border-box;
-    margin: 15px 0;
-    position: relative;
-    top: 110px;
+    box-sizing: border-box; 
+    position: absolute;
+    top: -32px;
   }
   .img-link {
     width: 100%;
@@ -239,23 +259,37 @@ ul {
   .slider-button {
     z-index: 5;
   }
+  .back {
+    z-index: 5;
+    position: fixed;
+    top: 80%;
+    left: 65%;
+  }
+  .to-mobile {
+    z-index: 5;
+    position: fixed;
+    top: 70%;
+    left: 65%;
+  }
+  .to-desktop {
+    z-index: 5;
+    position: fixed;
+    top: 70%;
+    left: 65%;
+  }
 }
 
 .slider-button {
   cursor: pointer;
-  top: 5%;
   left: 75%;
   width: 50px;
-  height: 50px;
   position: relative;
   border: 1px solid black;
-  border-radius: 50%;
 }
-
 .size-button {
   border: 2px solid black;
   border-radius: 5px;
-  /* padding: 10px; */
   width: 100px;
   height: 40px;
 }
+
